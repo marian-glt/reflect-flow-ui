@@ -2,6 +2,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex min-h-screen">
+      <div></div>
       <aside className="w-64 bg-red-1">
         <Link href="emotion-log">Emotion Log</Link>
         <Link href="/journalling">Journalling</Link>
