@@ -1,14 +1,10 @@
-import Link from "next/link";
+import { Sidebar } from "./components/Sidebar";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen">
-      <div></div>
-      <aside className="w-64 bg-red-1">
-        <Link href="emotion-log">Emotion Log</Link>
-        <Link href="/journalling">Journalling</Link>
-        <Link href="/research">Research</Link>
-      </aside>
-      <main className="flex-1 p-8">{/* Main content goes here */}</main>
-    </div>
+    <main className="grid grid-cols-4">
+      <Sidebar />
+      <section className="col-span-3">Home</section>
+    </main>
   );
 }

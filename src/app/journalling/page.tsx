@@ -1,7 +1,10 @@
+import { Sidebar } from "../components/Sidebar";
+
 export default function Page() {
   return (
-    <div>
-      <h1>Journalling</h1>
-    </div>
+    <main className="grid grid-cols-4">
+      <Sidebar />
+      <section className="col-span-3">Journalling</section>
+    </main>
   );
 }

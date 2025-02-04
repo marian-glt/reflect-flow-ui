@@ -1,7 +1,10 @@
+import { Sidebar } from "../components/Sidebar";
+
 export default function Page() {
   return (
-    <div>
-      <h1>Emotion Log</h1>
-    </div>
+    <main className="grid grid-cols-4">
+      <Sidebar />
+      <section className="col-span-3">Emotion Log</section>
+    </main>
   );
 }
