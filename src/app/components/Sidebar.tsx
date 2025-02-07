@@ -1,66 +1,63 @@
-import Link from "next/link";
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faHouse } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+
+import {
+	faHamburger,
+	faHome,
+	faPersonRifle,
+	faBook,
+	faHeart,
+	faPerson,
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export function Sidebar() {
-  return (
-    // <aside className="flex flex-col p-4 col-span-1 ">
-    //   <h1 className="border-b border-blue-500">
-    //     <Link href="/" className="flex items-center gap-2 text-1xl font-bold">
-    //       <FontAwesomeIcon icon={faHouse} className="w-5" />
-    //       Reflect Flow
-    //     </Link>
-    //   </h1>
-    //   <div className="flex flex-col bg-blue">
-    //     <Link href="/profile" className="flex items-center gap-2">
-    //       <FontAwesomeIcon icon={faChevronRight} className="w-2" />
-    //       Profile
-    //     </Link>
-    //     <Link href="/emotion-log" className="flex items-center gap-2">
-    //       <FontAwesomeIcon icon={faChevronRight} className="w-2" />
-    //       Emotion Log
-    //     </Link>
-    //     <Link href="/journalling" className="flex items-center gap-2">
-    //       <FontAwesomeIcon icon={faChevronRight} className="w-2" />
-    //       Journalling
-    //     </Link>
-    //     <Link href="/research" className="flex items-center gap-2">
-    //       <FontAwesomeIcon icon={faChevronRight} className="w-2" />
-    //       Research
-    //     </Link>
-    //   </div>
-    // </aside>
-    <div className="flex flex-col items-center w-16 h-full overflow-hidden text-gray-400 bg-gray-900">
-      {/* Navigation Header */}
-      <Link href="/" className="flex items-center justify-center mt-3">
-        <FontAwesomeIcon icon={faHouse} className="w-8 h-8" />
-        Reflect Flow
-      </Link>
-      <div className="flex flex-col items-center mt-3 border-t border-gray-700">
-        <Link
-          href="/profile"
-          className="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
-        >
-          <FontAwesomeIcon icon={faChevronRight} className="w-6 h-6" />
-          Profile
-        </Link>
-      </div>
-      <div className="flex flex-col items-center mt-2 border-t border-gray-700">
-        <Link
-          href="/profile"
-          className="flex items-center justify-center w-12 h-12 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
-        >
-          <FontAwesomeIcon icon={faChevronRight} className="w-6 h-6" />
-          Profile
-        </Link>
-      </div>
-      <Link
-        href="/"
-        className="flex items-center justify-center w-16 h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300"
-      >
-        <FontAwesomeIcon icon={faHouse} className="w-8 h-8" />
-        Reflect Flow
-      </Link>
-    </div>
-  );
+	const [expandedMenu, setExpandMenu] = useState(true);
+	return (
+		<div
+			className={`flex flex-col items-center overflow-hidden
+		${expandedMenu ? "w-48" : "w-16"} h-screen 
+		text-gray-700 bg-gray-200
+		dark:text-gray-400 dark:bg-gray-900`}
+		>
+			{/* Navigation Header */}
+			<Link href="#" className="flex items-center justify-between mt-3">
+				<FontAwesomeIcon icon={faHome} className="w-8 h-8" />
+				<span>{expandedMenu ? "Reflect Flow" : ""}</span>
+			</Link>
+			{/* Navigation Links */}
+			<div className="flex flex-col items-center mt-3 border-t border-gray-700">
+				<Link
+					href="#"
+					className="flex items-center justify-between w-24 h-10 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
+				>
+					<FontAwesomeIcon icon={faPerson} className="w-6 h-6" />
+					Profile
+				</Link>
+				<Link
+					href="#"
+					className="flex items-center justify-between w-24 h-10 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
+				>
+					<FontAwesomeIcon icon={faBook} className="w-6 h-6" />
+					Journal
+				</Link>
+				<Link
+					href="#"
+					className="flex items-center justify-center w-32 h-10 mt-2 rounded hover:bg-gray-700 hover:text-gray-300"
+				>
+					<FontAwesomeIcon icon={faHeart} className="w-6 h-6" />
+					Emotion Log
+				</Link>
+			</div>
+			{/* Collapse Button */}
+			<button
+				className="flex items-center justify-center mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300"
+				onClick={() => setExpandMenu(!expandedMenu)}
+			>
+				<FontAwesomeIcon icon={faHamburger} className="w-8 h-8" />
+				Collapse menu
+			</button>
+		</div>
+	);
 }
