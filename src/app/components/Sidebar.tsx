@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
 	faHamburger,
 	faHome,
-	faPersonRifle,
 	faBook,
 	faHeart,
 	faPerson,
