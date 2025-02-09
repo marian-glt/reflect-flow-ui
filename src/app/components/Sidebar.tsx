@@ -19,10 +19,10 @@ export default function Sidebar() {
 	};
 	return (
 		<div
-			className={`flex flex-col items-center overflow-hidden transition-all duration-300
+			className={`flex flex-col items-center overflow-hidden transition-all duration-500
 			text-gray-400 dark:text-blue-400  
 			bg-gray-900  dark:bg-gray-950
-			${expandedMenu ? "w-40 h-full opacity-100" : "w-16 h-full opacity-100"}`}
+			${expandedMenu ? "w-48 h-full opacity-100" : "w-16 h-full opacity-100"}`}
 		>
 			{/* Top Link */}
 			<Link
@@ -90,7 +90,7 @@ export default function Sidebar() {
 			</div>
 			{/* Collapsible Button */}
 			<button
-				className={`flex items-center justify-center 
+				className={`flex items-center justify-center transition-all duration-700
 					${expandedMenu ? "w-full h-16 mt-auto" : "w-16 h-16 mt-auto"} 
 					bg-gray-800 hover:bg-gray-700 hover:text-gray-300`}
 				onClick={expandMenu}
