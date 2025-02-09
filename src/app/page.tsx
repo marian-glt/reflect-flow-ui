@@ -2,6 +2,7 @@ import { faBook } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Tabs from "./components/Tabs";
+import Carousel from "./components/Carousel";
 
 export default function Home(): React.ReactNode {
 	return (
@@ -25,7 +26,7 @@ export default function Home(): React.ReactNode {
 						<Tabs />
 					</div>
 					<div className="flex flex-col items-center col-span-7 bg-gray-800">
-						Content
+						<Carousel />
 					</div>
 				</div>
 			</div>
